@@ -8,7 +8,13 @@ ${BROWSER}  chrome
 
 *** Keywords ***
 Open Browser To Start Page
-    Open Browser  about:blank  ${BROWSER}
+    ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
+    Call Method    ${chrome_options}    add_argument    test-type
+    Call Method    ${chrome_options}    add_argument    --disable-extensions
+    Call Method    ${chrome_options}    add_argument    --headless
+    Call Method    ${chrome_options}    add_argument    --disable-gpu
+    Call Method    ${chrome_options}    add_argument    --no-sandbox
+    Create Webdriver    Chrome    chrome_options=${chrome_options}
     Go To  http://rental12.infotiv.net/
     Wait Until Page Contains  Infotiv Car Rental
 End Web Test
