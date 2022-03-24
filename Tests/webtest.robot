@@ -4,7 +4,6 @@ Library  SeleniumLibrary
 Suite Setup  Open Browser To Start Page
 
 
-
 *** Keywords ***
 Open Browser To Start Page
     Open Browser  about:blank  headlesschrome
