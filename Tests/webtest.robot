@@ -3,13 +3,11 @@ Documentation  Lab with test cases
 Library  SeleniumLibrary
 Suite Setup  Open Browser To Start Page
 
-*** Variables ***
-${BROWSER} = chrome
 
 
 *** Keywords ***
 Open Browser To Start Page
-    Open Browser about:blank ${BROWSER}
+    Open Browser about:blank headlesschrome
     Go To  http://rental12.infotiv.net/
     Wait Until Page Contains  Infotiv Car Rental
 End Web Test
