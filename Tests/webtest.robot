@@ -4,7 +4,7 @@ Library  SeleniumLibrary
 Suite Setup  Open Browser To Start Page
 
 *** Variables ***
-${BROWSER} = chrome 
+${BROWSER}  chrome 
 
 *** Keywords ***
 Open Browser To Start Page
